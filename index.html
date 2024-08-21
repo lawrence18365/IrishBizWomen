@@ -1,5 +1,5 @@
 
-<!DOCTYPE html><html><head><base href="https://irishbizwomen.ie/">
+<html><head><base href="https://irishbizwomen.ie/">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>IrishBizWomen | Empowering Irish Businesswomen</title>
@@ -71,7 +71,6 @@
     }
     
     .hero {
-        background: url('https://source.unsplash.com/1200x400/?business,women') no-repeat center center/cover;
         height: 500px;
         display: flex;
         align-items: center;
@@ -79,6 +78,7 @@
         text-align: center;
         color: #fff;
         position: relative;
+        overflow: hidden;
     }
     
     .hero::after {
@@ -156,7 +156,13 @@
     
     .post-image {
         height: 200px;
-        background: #ddd;
+        overflow: hidden;
+    }
+    
+    .post-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
     
     .post-content {
@@ -447,13 +453,13 @@
     </header>
 
     <section class="hero" id="home">
-    <div class="hero-content">
-        <h1>Empowering Irish Businesswomen</h1>
-        <p>Join a community of ambitious women shaping Ireland's business landscape</p>
-        <a href="#" class="btn">Become a Member</a>
-    </div>
-    <img src="https://postimg.cc/PNwfDgJx" alt="Group of diverse Irish businesswomen in a modern office setting" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" width="1600" height="900">
-</section>
+        <div class="hero-content">
+            <h1>Empowering Irish Businesswomen</h1>
+            <p>Join a community of ambitious women shaping Ireland's business landscape</p>
+            <a href="#" class="btn">Become a Member</a>
+        </div>
+        <img src="https://source.unsplash.com/1600x900/?irish,businesswomen" alt="Group of diverse Irish businesswomen in a modern office setting" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" width="1600" height="900">
+    </section>
 
     <section class="featured-posts" id="blog">
         <div class="container">
@@ -461,7 +467,7 @@
             <div class="post-grid">
                 <div class="post-card">
                     <div class="post-image">
-                        <img src="https://page-images.websim.ai/Woman%20in%20tech_300x200xJMigyTV0wLcKMhuPXxe7ddc94993b54.jpg" alt="Woman in tech" width="300" height="200">
+                        <img src="https://source.unsplash.com/300x200/?technology,women" alt="Woman in tech" width="300" height="200">
                     </div>
                     <div class="post-content">
                         <h3 class="post-title">Breaking Barriers in Irish Tech</h3>
@@ -481,7 +487,7 @@
                 </div>
                 <div class="post-card">
                     <div class="post-image">
-                        <img src="https://page-images.websim.ai/Woman%20giving%20presentation_300x200xJMigyTV0wLcKMhuPXx477eb88c6ed4.jpg" alt="Woman giving presentation" width="300" height="200">
+                        <img src="https://source.unsplash.com/300x200/?presentation,woman" alt="Woman giving presentation" width="300" height="200">
                     </div>
                     <div class="post-content">
                         <h3 class="post-title">Mastering Negotiation Skills</h3>
@@ -587,7 +593,7 @@
             <h2 class="section-title">Stay Informed</h2>
             <p>Subscribe to our newsletter for the latest insights, events, and opportunities.</p>
             <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required="">
+                <input type="email" placeholder="Enter your email" required>
                 <button type="submit" class="btn">Subscribe</button>
             </form>
         </div>
