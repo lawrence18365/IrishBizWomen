@@ -10,7 +10,6 @@
         --secondary-color: #ed8936;
         --text-color: #2d3748;
         --background-color: #f7fafc;
-        --card-background: #ffffff;
     }
     
     * {
@@ -36,6 +35,10 @@
         background-color: var(--primary-color);
         color: #fff;
         padding: 20px 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+        transition: background-color 0.3s ease;
     }
     
     .header-content {
@@ -46,7 +49,7 @@
     
     .logo {
         font-family: 'Merriweather', serif;
-        font-size: 1.8em;
+        font-size: 1.5em;
         font-weight: 700;
     }
     
@@ -73,211 +76,92 @@
     .article-header {
         background-color: var(--primary-color);
         color: #fff;
-        padding: 60px 0;
+        padding: 100px 0 50px;
         text-align: center;
     }
     
-    .article-header h1 {
+    .article-title {
         font-family: 'Merriweather', serif;
         font-size: 2.5em;
         margin-bottom: 20px;
     }
     
     .article-meta {
-        font-size: 1em;
+        font-style: italic;
         margin-bottom: 20px;
     }
     
     .article-content {
-        padding: 60px 0;
+        padding: 50px 0;
+    }
+    
+    .article-content p {
+        margin-bottom: 20px;
+    }
+    
+    .article-content h2 {
+        font-family: 'Merriweather', serif;
+        color: var(--primary-color);
+        margin: 40px 0 20px;
     }
     
     .article-image {
-        width: 100%;
+        max-width: 100%;
         height: auto;
-        margin-bottom: 30px;
+        margin: 30px 0;
         border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     }
     
-    .article-body h2 {
+    .cta-section {
+        background-color: #edf2f7;
+        padding: 50px 0;
+        text-align: center;
+        margin-top: 50px;
+    }
+    
+    .cta-section h2 {
         font-family: 'Merriweather', serif;
-        font-size: 1.8em;
         color: var(--primary-color);
-        margin: 30px 0 15px;
-    }
-    
-    .article-body p {
         margin-bottom: 20px;
     }
     
-    .article-body ul, .article-body ol {
-        margin-bottom: 20px;
-        padding-left: 20px;
-    }
-    
-    .article-body li {
-        margin-bottom: 10px;
-    }
-    
-    .call-to-action {
-        background-color: var(--secondary-color);
-        color: #fff;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        margin-top: 40px;
-    }
-    
-    .call-to-action h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.5em;
-        margin-bottom: 15px;
-    }
-    
-    .cta-button {
+    .btn {
         display: inline-block;
-        background-color: #fff;
-        color: var(--secondary-color);
-        padding: 10px 20px;
-        border-radius: 5px;
-        text-decoration: none;
-        font-weight: 600;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-    
-    .cta-button:hover {
-        background-color: var(--primary-color);
+        background: var(--secondary-color);
         color: #fff;
-    }
-    
-    .author-bio {
-        background-color: var(--card-background);
-        border-radius: 10px;
-        padding: 30px;
-        margin-top: 40px;
-        display: flex;
-        align-items: center;
-    }
-    
-    .author-image {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        margin-right: 20px;
-    }
-    
-    .author-info h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.3em;
-        margin-bottom: 10px;
-    }
-    
-    .social-share {
-        margin-top: 40px;
-        text-align: center;
-    }
-    
-    .social-share h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.3em;
-        margin-bottom: 15px;
-    }
-    
-    .share-buttons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-    }
-    
-    .share-button {
-        display: inline-block;
-        padding: 10px 15px;
-        border-radius: 5px;
-        color: #fff;
+        padding: 12px 24px;
         text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, transform 0.3s ease;
         font-weight: 600;
-        transition: opacity 0.3s ease;
     }
     
-    .share-button:hover {
-        opacity: 0.8;
-    }
-    
-    .share-button.facebook {
-        background-color: #3b5998;
-    }
-    
-    .share-button.twitter {
-        background-color: #1da1f2;
-    }
-    
-    .share-button.linkedin {
-        background-color: #0077b5;
+    .btn:hover {
+        background: #dd6b20;
+        transform: translateY(-3px);
     }
     
     footer {
         background: var(--primary-color);
         color: #fff;
-        padding: 40px 0;
-        margin-top: 60px;
-    }
-    
-    .footer-content {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-    }
-    
-    .footer-section {
-        flex: 1;
-        margin-right: 30px;
-        margin-bottom: 20px;
-    }
-    
-    .footer-section h3 {
-        font-family: 'Merriweather', serif;
-        font-size: 1.2em;
-        margin-bottom: 20px;
-    }
-    
-    .footer-links {
-        list-style: none;
-    }
-    
-    .footer-links li {
-        margin-bottom: 10px;
-    }
-    
-    .footer-links a {
-        color: #fff;
-        text-decoration: none;
-        transition: color 0.3s ease;
-    }
-    
-    .footer-links a:hover {
-        color: var(--secondary-color);
+        padding: 30px 0;
+        text-align: center;
     }
     
     .social-icons {
-        display: flex;
-        gap: 15px;
+        margin-top: 20px;
     }
     
     .social-icons a {
         color: #fff;
         font-size: 1.5em;
+        margin: 0 10px;
         transition: color 0.3s ease;
     }
     
     .social-icons a:hover {
         color: var(--secondary-color);
-    }
-    
-    .copyright {
-        text-align: center;
-        margin-top: 30px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
     
     @media (max-width: 768px) {
@@ -290,16 +174,8 @@
             margin-top: 20px;
         }
         
-        .article-header h1 {
+        .article-title {
             font-size: 2em;
-        }
-        
-        .footer-content {
-            flex-direction: column;
-        }
-        
-        .footer-section {
-            margin-right: 0;
         }
     }
 </style>
@@ -312,9 +188,9 @@
                 <ul>
                     <li><a href="https://lawrence18365.github.io/IrishBizWomen">Home</a></li>
                     <li><a href="https://lawrence18365.github.io/IrishBizWomen/blog">Blog</a></li>
-                    <li><a href="https://lawrence18365.github.io/IrishBizWomen#events">Events</a></li>
-                    <li><a href="https://lawrence18365.github.io/IrishBizWomen#resources">Resources</a></li>
-                    <li><a href="https://lawrence18365.github.io/IrishBizWomen#contact">Contact</a></li>
+                    <li><a href="https://lawrence18365.github.io/IrishBizWomen/events">Events</a></li>
+                    <li><a href="https://lawrence18365.github.io/IrishBizWomen/resources">Resources</a></li>
+                    <li><a href="https://lawrence18365.github.io/IrishBizWomen/contact">Contact</a></li>
                 </ul>
             </nav>
         </div>
