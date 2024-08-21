@@ -1,0 +1,384 @@
+
+<html><head><base href="https://irishbizwomen.ie/#resources">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resources | IrishBizWomen</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+    
+    :root {
+        --primary-color: #2c5282;
+        --secondary-color: #ed8936;
+        --text-color: #2d3748;
+        --background-color: #f7fafc;
+        --card-background: #ffffff;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-family: 'Merriweather', serif;
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .hero {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .hero h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        max-width: 800px;
+        margin: 0 auto 30px;
+    }
+    
+    .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        padding: 60px 0;
+    }
+    
+    .resource-card {
+        background-color: var(--card-background);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    
+    .resource-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .resource-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .resource-content {
+        padding: 20px;
+    }
+    
+    .resource-content h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .resource-content p {
+        margin-bottom: 15px;
+    }
+    
+    .resource-link {
+        display: inline-block;
+        background-color: var(--secondary-color);
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: background-color 0.3s ease;
+    }
+    
+    .resource-link:hover {
+        background-color: var(--primary-color);
+    }
+    
+    footer {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 40px 0;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        flex: 1;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        nav ul {
+            margin-top: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2em;
+        }
+        
+        .resources-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .footer-content {
+            flex-direction: column;
+        }
+        
+        .footer-section {
+            margin-right: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">IrishBizWomen</div>
+            <nav>
+                <ul>
+                    <li><a href="https://irishbizwomen.ie/">Home</a></li>
+                    <li><a href="https://irishbizwomen.ie/blog">Blog</a></li>
+                    <li><a href="https://irishbizwomen.ie/#events">Events</a></li>
+                    <li><a href="https://irishbizwomen.ie/#resources">Resources</a></li>
+                    <li><a href="https://irishbizwomen.ie/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Resources for Irish Businesswomen</h1>
+            <p>Discover a wealth of tools, guides, and support to help you thrive in the Irish business landscape.</p>
+        </div>
+    </section>
+
+    <main class="container">
+        <div class="resources-grid">
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Business%20women%20in%20a%20meeting_400x300xf0jJXdlrkeQDb1Tuvx80e86b11dc0a5.jpg" alt="Business women in a meeting" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Networking Guide</h3>
+                    <p>Learn effective strategies for building and leveraging your professional network in Ireland.</p>
+                    <a href="#" class="resource-link">Download Guide</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Financial%20charts%20and%20graphs_400x300xf0jJXdlrkeQDb1Tuvx1bc5bcc272a12.jpg" alt="Financial charts and graphs" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Financial Planning Toolkit</h3>
+                    <p>Essential tools and templates to help you manage your business finances with confidence.</p>
+                    <a href="#" class="resource-link">Access Toolkit</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Woman%20giving%20a%20presentation_400x300xf0jJXdlrkeQDb1Tuvxf742b76c0acac.jpg" alt="Woman giving a presentation" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Leadership Development Program</h3>
+                    <p>A comprehensive online course designed to enhance your leadership skills in the Irish context.</p>
+                    <a href="#" class="resource-link">Enroll Now</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Woman%20working%20on%20a%20laptop_400x300xf0jJXdlrkeQDb1Tuvx2e637b0717d95.jpg" alt="Woman working on a laptop" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Tech Skills Workshops</h3>
+                    <p>Stay ahead of the curve with our hands-on workshops covering essential business technologies.</p>
+                    <a href="#" class="resource-link">View Schedule</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Mentoring%20session_400x300xf0jJXdlrkeQDb1Tuvx5e5b80f447786.jpg" alt="Mentoring session" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Mentorship Program</h3>
+                    <p>Connect with experienced Irish businesswomen for guidance and support in your career journey.</p>
+                    <a href="#" class="resource-link">Apply Now</a>
+                </div>
+            </div>
+            <div class="resource-card">
+                <img src="https://page-images.websim.ai/Startup%20office%20space_400x300xf0jJXdlrkeQDb1Tuvxa21cec05c7bb2.jpg" alt="Startup office space" width="400" height="300">
+                <div class="resource-content">
+                    <h3>Startup Funding Guide</h3>
+                    <p>Navigate the Irish startup ecosystem with our comprehensive guide to funding options and resources.</p>
+                    <a href="#" class="resource-link">Get the Guide</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="https://irishbizwomen.ie/">Home</a></li>
+                    <li><a href="https://irishbizwomen.ie/blog">Blog</a></li>
+                    <li><a href="https://irishbizwomen.ie/#events">Events</a></li>
+                    <li><a href="https://irishbizwomen.ie/#resources">Resources</a></li>
+                    <li><a href="https://irishbizwomen.ie/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@irishbizwomen.ie</p>
+                <p>Phone: +353 1 234 5678</p>
+                <p>Address: 123 Business Street, Dublin, Ireland</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/irishbizwomen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/irishbizwomen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/irishbizwomen" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/irishbizwomen" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 IrishBizWomen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Implement lazy loading for images
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            }
+        });
+    </script>
+</body></html>
