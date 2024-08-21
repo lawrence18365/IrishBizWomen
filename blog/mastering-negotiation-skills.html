@@ -425,19 +425,9 @@
         </div>    
 </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
     <script>
-        // Header scroll effect
-        const header = document.querySelector('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                header.style.backgroundColor = 'rgba(44, 82, 130, 0.9)';
-            } else {
-                header.style.backgroundColor = 'var(--primary-color)';
-            }
-        });
-
-        // Smooth scrolling for anchor links
+        // Add smooth scrolling to all links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -448,45 +438,24 @@
             });
         });
 
-        // Add fade-in effect for article content
-        const fadeInElements = document.querySelectorAll('.article-content p, .article-content h2, .article-image');
-        
-        const fadeInObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                    fadeInObserver.unobserve(entry.target);
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+        // Implement share functionality
+        document.querySelectorAll('.share-button').forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                let url = encodeURIComponent(window.location.href);
+                let text = encodeURIComponent(document.title);
+                let shareUrl;
 
-        fadeInElements.forEach(element => {
-            fadeInObserver.observe(element);
+                if (this.classList.contains('facebook')) {
+                    shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+                } else if (this.classList.contains('twitter')) {
+                    shareUrl = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+                } else if (this.classList.contains('linkedin')) {
+                    shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${url}&title=${text}`;
+                }
+
+                window.open(shareUrl, '_blank', 'width=600,height=400');
+            });
         });
     </script>
-
-    <style>
-        .fade-in {
-            animation: fadeIn 1s ease-out forwards;
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        @keyframes fadeIn {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .article-content p,
-        .article-content h2,
-        .article-image {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-        }
-    </style>
 </body></html>
