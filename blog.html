@@ -1,0 +1,471 @@
+<html><head><base href="https://irishbizwomen.ie/blog">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IrishBizWomen Blog | Insights for Irish Businesswomen</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+    
+    :root {
+        --primary-color: #2c5282;
+        --secondary-color: #ed8936;
+        --text-color: #2d3748;
+        --background-color: #f7fafc;
+        --card-background: #ffffff;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-family: 'Merriweather', serif;
+        font-size: 1.8em;
+        font-weight: 700;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .blog-header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 60px 0;
+        text-align: center;
+    }
+    
+    .blog-header h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    
+    .blog-header p {
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .blog-content {
+        padding: 60px 0;
+    }
+    
+    .blog-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .blog-card {
+        background-color: var(--card-background);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    
+    .blog-image {
+        height: 200px;
+        overflow: hidden;
+    }
+    
+    .blog-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .blog-card:hover .blog-image img {
+        transform: scale(1.1);
+    }
+    
+    .blog-content {
+        padding: 20px;
+    }
+    
+    .blog-category {
+        font-size: 0.9em;
+        color: var(--secondary-color);
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+    
+    .blog-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.4em;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .blog-excerpt {
+        font-size: 0.95em;
+        color: var(--text-color);
+        margin-bottom: 15px;
+    }
+    
+    .read-more {
+        display: inline-block;
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #dd6b20;
+    }
+    
+    .blog-meta {
+        font-size: 0.9em;
+        color: #718096;
+        margin-top: 15px;
+    }
+    
+    .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    
+    .pagination a {
+        color: var(--primary-color);
+        padding: 8px 16px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        border: 1px solid #ddd;
+        margin: 0 4px;
+    }
+    
+    .pagination a.active {
+        background-color: var(--primary-color);
+        color: white;
+        border: 1px solid var(--primary-color);
+    }
+    
+    .pagination a:hover:not(.active) {
+        background-color: #ddd;
+    }
+    
+    footer {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 40px 0;
+        margin-top: 60px;
+    }
+    
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .footer-section {
+        flex: 1;
+        margin-right: 30px;
+        margin-bottom: 20px;
+    }
+    
+    .footer-section h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        nav ul {
+            margin-top: 20px;
+        }
+        
+        .blog-header h1 {
+            font-size: 2.5em;
+        }
+        
+        .footer-content {
+            flex-direction: column;
+        }
+        
+        .footer-section {
+            margin-right: 0;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">IrishBizWomen</div>
+            <nav>
+                <ul>
+                    <li><a href="https://irishbizwomen.ie/">Home</a></li>
+                    <li><a href="https://irishbizwomen.ie/blog">Blog</a></li>
+                    <li><a href="https://irishbizwomen.ie/#events">Events</a></li>
+                    <li><a href="https://irishbizwomen.ie/#resources">Resources</a></li>
+                    <li><a href="https://irishbizwomen.ie/#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="blog-header">
+        <div class="container">
+            <h1>IrishBizWomen Blog</h1>
+            <p>Insights, advice, and inspiration for Irish businesswomen</p>
+        </div>
+    </section>
+
+    <main class="blog-content">
+        <div class="container">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Women%20in%20leadership%20roles_600x400xckTgDtCAT8HAG3XZLx5ea2ff594b6dd.jpg" alt="Women in leadership roles" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Leadership</p>
+                        <h2 class="blog-title">5 Leadership Strategies for Women in Irish Business</h2>
+                        <p class="blog-excerpt">Discover powerful leadership techniques tailored for women navigating the Irish business landscape.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Sarah O'Connor | May 15, 2024</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Entrepreneur%20working%20on%20startup_600x400xckTgDtCAT8HAG3XZLx1c3880ab78a26.jpg" alt="Entrepreneur working on startup" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Entrepreneurship</p>
+                        <h2 class="blog-title">From Idea to Launch: A Guide for Irish Female Entrepreneurs</h2>
+                        <p class="blog-excerpt">Step-by-step advice on turning your business concept into a thriving reality in Ireland's startup ecosystem.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Emma Byrne | May 12, 2024</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Financial%20technology%20concept_600x400xckTgDtCAT8HAG3XZLxc1fe543256422.jpg" alt="Financial technology concept" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Finance</p>
+                        <h2 class="blog-title">Navigating FinTech: Opportunities for Women in Irish Finance</h2>
+                        <p class="blog-excerpt">Explore the growing FinTech sector in Ireland and how women can capitalize on emerging opportunities.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Aoife Kelly | May 8, 2024</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Business%20networking%20event_600x400xckTgDtCAT8HAG3XZLx4d024041a1a6.jpg" alt="Business networking event" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Networking</p>
+                        <h2 class="blog-title">The Art of Networking: Building Connections in Irish Business</h2>
+                        <p class="blog-excerpt">Learn effective strategies for expanding your professional network and fostering valuable business relationships.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Ciara Murphy | May 5, 2024</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Work-life%20balance%20concept_600x400xckTgDtCAT8HAG3XZLx8a44b91eaeec8.jpg" alt="Work-life balance concept" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Well-being</p>
+                        <h2 class="blog-title">Achieving Work-Life Balance: Tips for Busy Irish Businesswomen</h2>
+                        <p class="blog-excerpt">Practical advice on maintaining a healthy equilibrium between professional success and personal fulfillment.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Fiona Walsh | May 1, 2024</p>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <div class="blog-image">
+                        <img src="https://page-images.websim.ai/Digital%20marketing%20strategies_600x400xckTgDtCAT8HAG3XZLx798c3c646de96.jpg" alt="Digital marketing strategies" width="600" height="400">
+                    </div>
+                    <div class="blog-content">
+                        <p class="blog-category">Marketing</p>
+                        <h2 class="blog-title">Digital Marketing Trends: Staying Ahead in the Irish Market</h2>
+                        <p class="blog-excerpt">Discover the latest digital marketing strategies to help your business thrive in Ireland's competitive landscape.</p>
+                        <a href="#" class="read-more">Read More</a>
+                        <p class="blog-meta">By Niamh Doherty | April 28, 2024</p>
+                    </div>
+                </article>
+            </div>
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">Next »</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="https://irishbizwomen.ie/">Home</a></li>
+                    <li><a href="https://irishbizwomen.ie/blog">Blog</a></li>
+                    <li><a href="https://irishbizwomen.ie/#events">Events</a></li>
+                    <li><a href="https://irishbizwomen.ie/#resources">Resources</a></li>
+                    <li><a href="https://irishbizwomen.ie/#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@irishbizwomen.ie</p>
+                <p>Phone: +353 1 234 5678</p>
+                <p>Address: 123 Business Street, Dublin, Ireland</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/irishbizwomen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/irishbizwomen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/irishbizwomen" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/irishbizwomen" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 IrishBizWomen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+    <script>
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Lazy loading images
+        document.addEventListener("DOMContentLoaded", function() {
+            var lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
+
+            if ("IntersectionObserver" in window) {
+                let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            let lazyImage = entry.target;
+                            lazyImage.src = lazyImage.dataset.src;
+                            lazyImage.classList.remove("lazy");
+                            lazyImageObserver.unobserve(lazyImage);
+                        }
+                    });
+                });
+
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImageObserver.observe(lazyImage);
+                });
+            } else {
+                // Fallback for browsers that don't support IntersectionObserver
+                lazyImages.forEach(function(lazyImage) {
+                    lazyImage.src = lazyImage.dataset.src;
+                    lazyImage.classList.remove("lazy");
+                });
+            }
+        });
+    </script>
+</body></html>
