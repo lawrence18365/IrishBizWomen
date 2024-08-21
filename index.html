@@ -1,338 +1,434 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IrishBizWomen | Empowering Irish Businesswomen</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
-        
-        :root {
-            --primary-color: #2c5282;
-            --secondary-color: #ed8936;
-            --text-color: #2d3748;
-            --background-color: #f7fafc;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Open Sans', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 20px 0;
-        }
-        
+
+<!DOCTYPE html><html><head><base href="https://irishbizwomen.ie/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IrishBizWomen | Empowering Irish Businesswomen</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+    
+    :root {
+        --primary-color: #2c5282;
+        --secondary-color: #ed8936;
+        --text-color: #2d3748;
+        --background-color: #f7fafc;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-family: 'Merriweather', serif;
+        font-size: 2em;
+        font-weight: 700;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .hero {
+        background: url('https://source.unsplash.com/1200x400/?business,women') no-repeat center center/cover;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    
+    .hero-content {
+        z-index: 2;
+    }
+    
+    .hero h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3.5em;
+        margin-bottom: 20px;
+    }
+    
+    .hero p {
+        font-size: 1.2em;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+    
+    .btn {
+        display: inline-block;
+        background: var(--secondary-color);
+        color: #fff;
+        padding: 12px 24px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+    }
+    
+    .btn:hover {
+        background: #dd6b20;
+    }
+    
+    .featured-posts {
+        padding: 80px 0;
+    }
+    
+    .section-title {
+        font-family: 'Merriweather', serif;
+        font-size: 2.5em;
+        text-align: center;
+        margin-bottom: 40px;
+        color: var(--primary-color);
+    }
+    
+    .post-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .post-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .post-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .post-image {
+        height: 200px;
+        background: #ddd;
+    }
+    
+    .post-content {
+        padding: 20px;
+    }
+    
+    .post-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.3em;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .post-excerpt {
+        font-size: 0.9em;
+        color: #4a5568;
+        margin-bottom: 15px;
+    }
+    
+    .read-more {
+        color: var(--secondary-color);
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #dd6b20;
+    }
+    
+    .cta-section {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 80px 0;
+        text-align: center;
+    }
+    
+    .cta-section h2 {
+        font-family: 'Merriweather', serif;
+        font-size: 2.5em;
+        margin-bottom: 20px;
+    }
+    
+    .cta-section p {
+        font-size: 1.1em;
+        max-width: 600px;
+        margin: 0 auto 30px;
+    }
+    
+    .events-section {
+        padding: 80px 0;
+        background-color: #edf2f7;
+    }
+    
+    .event-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .event-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .event-details {
+        padding: 20px;
+    }
+    
+    .event-date {
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+    }
+    
+    .event-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+        color: var(--primary-color);
+    }
+    
+    .event-description {
+        font-size: 0.9em;
+        color: #4a5568;
+    }
+    
+    .testimonials {
+        padding: 80px 0;
+        background-color: #fff;
+    }
+    
+    .testimonial-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+    }
+    
+    .testimonial-card {
+        background-color: #edf2f7;
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .testimonial-text {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+    
+    .testimonial-author {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    
+    .resources-section {
+        padding: 80px 0;
+        background-color: #f7fafc;
+    }
+    
+    .resources-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+    }
+    
+    .resource-card {
+        background: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .resource-card h3 {
+        font-family: 'Merriweather', serif;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+    }
+    
+    .resource-card ul {
+        list-style-type: none;
+    }
+    
+    .resource-card ul li {
+        margin-bottom: 10px;
+    }
+    
+    .resource-card ul li a {
+        color: var(--text-color);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .resource-card ul li a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .newsletter-section {
+        padding: 80px 0;
+        background-color: #edf2f7;
+        text-align: center;
+    }
+    
+    .newsletter-form {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+    }
+    
+    .newsletter-form input[type="email"] {
+        padding: 12px;
+        width: 300px;
+        border: 1px solid #cbd5e0;
+        border-radius: 5px 0 0 5px;
+        font-size: 1em;
+    }
+    
+    .newsletter-form .btn {
+        border-radius: 0 5px 5px 0;
+    }
+    
+    footer {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 50px 0;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .footer-section h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
         .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-family: 'Merriweather', serif;
-            font-size: 2em;
-            font-weight: 700;
+            flex-direction: column;
+            text-align: center;
         }
         
         nav ul {
-            list-style: none;
-            display: flex;
-        }
-        
-        nav ul li {
-            margin-left: 20px;
-        }
-        
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        nav ul li a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .hero {
-            background: url('/api/placeholder/1200/400') no-repeat center center/cover;
-            height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #fff;
-            position: relative;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 1;
-        }
-        
-        .hero-content {
-            z-index: 2;
+            margin-top: 20px;
         }
         
         .hero h1 {
-            font-family: 'Merriweather', serif;
-            font-size: 3.5em;
-            margin-bottom: 20px;
+            font-size: 2.5em;
         }
         
-        .hero p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin: 0 auto 30px;
+        .newsletter-form {
+            flex-direction: column;
+            align-items: center;
         }
         
-        .btn {
-            display: inline-block;
-            background: var(--secondary-color);
-            color: #fff;
-            padding: 12px 24px;
-            text-decoration: none;
+        .newsletter-form input[type="email"] {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 10px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-weight: 600;
         }
         
-        .btn:hover {
-            background: #dd6b20;
+        .newsletter-form .btn {
+            border-radius: 5px;
         }
-        
-        .featured-posts {
-            padding: 80px 0;
-        }
-        
-        .section-title {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5em;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--primary-color);
-        }
-        
-        .post-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .post-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        
-        .post-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
-        }
-        
-        .post-image {
-            height: 200px;
-            background: #ddd;
-        }
-        
-        .post-content {
-            padding: 20px;
-        }
-        
-        .post-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.3em;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .post-excerpt {
-            font-size: 0.9em;
-            color: #4a5568;
-            margin-bottom: 15px;
-        }
-        
-        .read-more {
-            color: var(--secondary-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-        
-        .read-more:hover {
-            color: #dd6b20;
-        }
-        
-        .cta-section {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            font-family: 'Merriweather', serif;
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        
-        .cta-section p {
-            font-size: 1.1em;
-            max-width: 600px;
-            margin: 0 auto 30px;
-        }
-        
-        .events-section {
-            padding: 80px 0;
-            background-color: #edf2f7;
-        }
-        
-        .event-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .event-card {
-            background: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .event-details {
-            padding: 20px;
-        }
-        
-        .event-date {
-            font-weight: 600;
-            color: var(--secondary-color);
-            margin-bottom: 10px;
-        }
-        
-        .event-title {
-            font-family: 'Merriweather', serif;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-        
-        .event-description {
-            font-size: 0.9em;
-            color: #4a5568;
-        }
-        
-        .testimonials {
-            padding: 80px 0;
-            background-color: #fff;
-        }
-        
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .testimonial-card {
-            background-color: #edf2f7;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-        }
-        
-        .testimonial-text {
-            font-style: italic;
-            margin-bottom: 20px;
-        }
-        
-        .testimonial-author {
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-        
-        footer {
-            background: var(--primary-color);
-            color: #fff;
-            padding: 50px 0;
-        }
-        
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-        }
-        
-        .footer-section h3 {
-            font-family: 'Merriweather', serif;
-            font-size: 1.2em;
-            margin-bottom: 20px;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .social-icons {
-            display: flex;
-            gap: 15px;
-        }
-        
-        .social-icons a {
-            color: #fff;
-            font-size: 1.5em;
-            transition: color 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            color: var(--secondary-color);
-        }
-        
-        .copyright {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    }
+</style>
 </head>
 <body>
     <header>
@@ -350,21 +446,22 @@
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Empowering Irish Businesswomen</h1>
-            <p>Join a community of ambitious women shaping Ireland's business landscape</p>
-            <a href="#" class="btn">Become a Member</a>
-        </div>
-    </section>
+    <section class="hero" id="home">
+    <div class="hero-content">
+        <h1>Empowering Irish Businesswomen</h1>
+        <p>Join a community of ambitious women shaping Ireland's business landscape</p>
+        <a href="#" class="btn">Become a Member</a>
+    </div>
+    <img src="https://source.unsplash.com/1600x900/?irish,businesswomen" alt="Group of diverse Irish businesswomen in a modern office setting" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;" width="1600" height="900">
+</section>
 
-    <section class="featured-posts">
+    <section class="featured-posts" id="blog">
         <div class="container">
             <h2 class="section-title">Featured Articles</h2>
             <div class="post-grid">
                 <div class="post-card">
                     <div class="post-image">
-                        <img src="/api/placeholder/300/200" alt="Woman entrepreneur" />
+                        <img src="https://imgur.com/a/VOxOgfY" alt="Woman in tech" width="300" height="200">
                     </div>
                     <div class="post-content">
                         <h3 class="post-title">Breaking Barriers in Irish Tech</h3>
@@ -374,7 +471,7 @@
                 </div>
                 <div class="post-card">
                     <div class="post-image">
-                        <img src="/api/placeholder/300/200" alt="Networking event" />
+                        <img src="https://source.unsplash.com/300x200/?networking,business" alt="Networking event" width="300" height="200">
                     </div>
                     <div class="post-content">
                         <h3 class="post-title">The Art of Networking in Ireland</h3>
@@ -384,7 +481,7 @@
                 </div>
                 <div class="post-card">
                     <div class="post-image">
-                        <img src="/api/placeholder/300/200" alt="Woman giving presentation" />
+                        <img src="https://source.unsplash.com/300x200/?presentation,woman" alt="Woman giving presentation" width="300" height="200">
                     </div>
                     <div class="post-content">
                         <h3 class="post-title">Mastering Negotiation Skills</h3>
@@ -404,7 +501,7 @@
         </div>
     </section>
 
-    <section class="events-section">
+    <section class="events-section" id="events">
         <div class="container">
             <h2 class="section-title">Upcoming Events</h2>
             <div class="event-list">
@@ -453,7 +550,7 @@
         </div>
     </section>
 
-    <section class="resources-section">
+    <section class="resources-section" id="resources">
         <div class="container">
             <h2 class="section-title">Resources</h2>
             <div class="resources-grid">
@@ -490,13 +587,13 @@
             <h2 class="section-title">Stay Informed</h2>
             <p>Subscribe to our newsletter for the latest insights, events, and opportunities.</p>
             <form class="newsletter-form">
-                <input type="email" placeholder="Enter your email" required>
+                <input type="email" placeholder="Enter your email" required="">
                 <button type="submit" class="btn">Subscribe</button>
             </form>
         </div>
     </section>
 
-    <footer>
+    <footer id="contact">
         <div class="container footer-content">
             <div class="footer-section">
                 <h3>Quick Links</h3>
@@ -517,18 +614,37 @@
             <div class="footer-section">
                 <h3>Follow Us</h3>
                 <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/irishbizwomen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/irishbizwomen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/irishbizwomen" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/irishbizwomen" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
         <div class="copyright">
-            <p>&copy; 2024 IrishBizWomen. All rights reserved.</p>
+            <p>© 2024 IrishBizWomen. All rights reserved.</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
-</body>
-</html>
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Simple form submission handling
+        document.querySelector('.newsletter-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for subscribing to our newsletter!');
+            this.reset();
+        });
+    </script>
+
+</body></html>
