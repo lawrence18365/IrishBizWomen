@@ -1,0 +1,422 @@
+
+<html><head><base href="https://irishbizwomen.ie/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IrishBizWomen | Events</title>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@400;600&display=swap');
+    
+    :root {
+        --primary-color: #2c5282;
+        --secondary-color: #ed8936;
+        --text-color: #2d3748;
+        --background-color: #f7fafc;
+    }
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        font-family: 'Open Sans', sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--background-color);
+    }
+    
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    
+    header {
+        background-color: var(--primary-color);
+        color: #fff;
+        padding: 20px 0;
+    }
+    
+    .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .logo {
+        font-family: 'Merriweather', serif;
+        font-size: 2em;
+        font-weight: 700;
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+    }
+    
+    nav ul li {
+        margin-left: 20px;
+    }
+    
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 600;
+        transition: color 0.3s ease;
+    }
+    
+    nav ul li a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .hero {
+        background: url('https://page-images.websim.ai/Women%20in%20Leadership%20Summit_600x400x9SyoF4GkiTD5i2Gycx48d17bc95bf8e.jpg') no-repeat center center/cover;
+        height: 400px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        position: relative;
+    }
+    
+    .hero::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1;
+    }
+    
+    .hero-content {
+        z-index: 2;
+    }
+    
+    .hero h1 {
+        font-family: 'Merriweather', serif;
+        font-size: 3em;
+        margin-bottom: 20px;
+    }
+    
+    .event-list {
+        padding: 80px 0;
+    }
+    
+    .event-card {
+        background: #fff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        display: flex;
+    }
+    
+    .event-image {
+        flex: 0 0 300px;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .event-details {
+        padding: 30px;
+        flex: 1;
+    }
+    
+    .event-date {
+        font-weight: 600;
+        color: var(--secondary-color);
+        margin-bottom: 10px;
+    }
+    
+    .event-title {
+        font-family: 'Merriweather', serif;
+        font-size: 1.5em;
+        margin-bottom: 15px;
+        color: var(--primary-color);
+    }
+    
+    .event-description {
+        margin-bottom: 20px;
+    }
+    
+    .btn {
+        display: inline-block;
+        background: var(--secondary-color);
+        color: #fff;
+        padding: 10px 20px;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+    }
+    
+    .btn:hover {
+        background: #dd6b20;
+    }
+    
+    .photo-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin-top: 50px;
+    }
+    
+    .photo-item {
+        position: relative;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .photo-item img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .photo-item:hover img {
+        transform: scale(1.05);
+    }
+    
+    .photo-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 10px;
+        font-size: 0.9em;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+    }
+    
+    .photo-item:hover .photo-caption {
+        transform: translateY(0);
+    }
+    
+    footer {
+        background: var(--primary-color);
+        color: #fff;
+        padding: 50px 0;
+        margin-top: 80px;
+    }
+    
+    .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+    }
+    
+    .footer-section h3 {
+        font-family: 'Merriweather', serif;
+        font-size: 1.2em;
+        margin-bottom: 20px;
+    }
+    
+    .footer-links {
+        list-style: none;
+    }
+    
+    .footer-links li {
+        margin-bottom: 10px;
+    }
+    
+    .footer-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .footer-links a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .social-icons {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .social-icons a {
+        color: #fff;
+        font-size: 1.5em;
+        transition: color 0.3s ease;
+    }
+    
+    .social-icons a:hover {
+        color: var(--secondary-color);
+    }
+    
+    .copyright {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    @media (max-width: 768px) {
+        .header-content {
+            flex-direction: column;
+            text-align: center;
+        }
+        
+        nav ul {
+            margin-top: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5em;
+        }
+        
+        .event-card {
+            flex-direction: column;
+        }
+        
+        .event-image {
+            height: 200px;
+        }
+    }
+</style>
+</head>
+<body>
+    <header>
+        <div class="container header-content">
+            <div class="logo">IrishBizWomen</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Upcoming Events</h1>
+            <p>Connect, learn, and grow with Ireland's leading businesswomen</p>
+        </div>
+        <img src="https://page-images.websim.ai/Women%20in%20Leadership%20Summit_600x400x9SyoF4GkiTD5i2Gycx48d17bc95bf8e.jpg" alt="Group of diverse businesswomen at a conference" width="1600" height="900" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+    </section>
+
+    <section class="event-list container">
+        <div class="event-card">
+            <div class="event-image">
+                <img src="https://source.unsplash.com/600x400/?conference,women" alt="Women in Leadership Summit" width="600" height="400" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="event-details">
+                <p class="event-date">September 15, 2024</p>
+                <h2 class="event-title">Women in Leadership Summit</h2>
+                <p class="event-description">Join us for a day-long conference featuring inspiring talks from Ireland's top female executives. Learn about leadership strategies, overcoming challenges, and advancing your career in the corporate world.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="https://page-images.websim.ai/Entrepreneurship%20Workshop_600x400x9SyoF4GkiTD5i2Gycx03245e751c363.jpg" alt="Entrepreneurship Workshop" width="600" height="400" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="event-details">
+                <p class="event-date">October 8, 2024</p>
+                <h2 class="event-title">Entrepreneurship Workshop</h2>
+                <p class="event-description">Discover the essentials of starting and scaling your business in Ireland. This hands-on workshop will cover business planning, funding options, marketing strategies, and legal considerations for new entrepreneurs.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="https://page-images.websim.ai/Networking%20Mixer_600x400x9SyoF4GkiTD5i2Gycxdfcfd2dfec6b9.jpg" alt="Networking Mixer" width="600" height="400" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="event-details">
+                <p class="event-date">November 22, 2024</p>
+                <h2 class="event-title">Networking Mixer</h2>
+                <p class="event-description">Connect with fellow businesswomen in a relaxed, social setting. This evening event provides an excellent opportunity to expand your professional network, share experiences, and explore potential collaborations.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+        </div>
+
+        <div class="event-card">
+            <div class="event-image">
+                <img src="https://page-images.websim.ai/Tech%20Innovation%20Seminar_600x400x9SyoF4GkiTD5i2Gycxe5a2099be085a.jpg" alt="Tech Innovation Seminar" width="600" height="400" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div class="event-details">
+                <p class="event-date">December 10, 2024</p>
+                <h2 class="event-title">Tech Innovation Seminar</h2>
+                <p class="event-description">Explore the latest technological advancements shaping the business landscape. This seminar will feature talks on AI, blockchain, IoT, and other emerging technologies, with a focus on their applications in various industries.</p>
+                <a href="#" class="btn">Register Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="photo-gallery container">
+        <h2 style="text-align: center; margin-bottom: 30px; font-family: 'Merriweather', serif; color: var(--primary-color);">Event Photo Gallery</h2>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Female%20keynote%20speaker%20on%20stage_800x600x9SyoF4GkiTD5i2Gycxbef2d058965ab.jpg" alt="Business conference with women attendees" width="800" height="600">
+            <div class="photo-caption">Women in Business Conference 2023</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Women%20receiving%20business%20awards_800x600x9SyoF4GkiTD5i2Gycx1737ab52a2552.jpg" alt="Women participating in a business workshop" width="800" height="600">
+            <div class="photo-caption">Entrepreneurship Workshop</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Women%20participating%20in%20a%20business%20workshop_800x600x9SyoF4GkiTD5i2Gycxdfb606dd3e6d5.jpg" alt="Networking event with businesswomen" width="800" height="600">
+            <div class="photo-caption">Annual Networking Gala</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Networking%20event%20with%20businesswomen_800x600x9SyoF4GkiTD5i2Gycx4e3e1e4f58385.jpg" alt="Female keynote speaker on stage" width="800" height="600">
+            <div class="photo-caption">Leadership Summit Keynote</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Mentoring%20session%20between%20businesswomen_800x600x9SyoF4GkiTD5i2Gycx77966ff976dcc.jpg" alt="Mentoring session between businesswomen" width="800" height="600">
+            <div class="photo-caption">Mentorship Program Launch</div>
+        </div>
+        <div class="photo-item">
+            <img src="https://page-images.websim.ai/Female%20keynote%20speaker%20on%20stage_800x600x9SyoF4GkiTD5i2Gycxbef2d058965ab.jpg" alt="Women receiving business awards" width="800" height="600">
+            <div class="photo-caption">IrishBizWomen Awards Ceremony</div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#resources">Resources</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: info@irishbizwomen.ie</p>
+                <p>Phone: +353 1 234 5678</p>
+                <p>Address: 123 Business Street, Dublin, Ireland</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/irishbizwomen" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="https://www.twitter.com/irishbizwomen" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.linkedin.com/company/irishbizwomen" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.instagram.com/irishbizwomen" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>© 2024 IrishBizWomen. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+</body></html>
